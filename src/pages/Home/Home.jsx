@@ -1,9 +1,10 @@
+import { ProductCard } from "../../components"
+
 const Home = () => {
     return (
         <main>
-            <br />
-            <br />
-            <button className="btn">Click Me</button>
+            <ProductCard />
+
         </main>
     )
 }

@@ -1,27 +1,31 @@
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { useState } from "react"
-
+// https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/d6af57ef-afbe-4da3-99fc-85026dfa2544/md08003300-DZ-13-jpg
+// https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/77c7117d-b652-4c8b-a266-5e36db20a229/md08003300-DZ-06-jpg
+// https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/82f45bc8-b8ef-47e1-b700-f6acead88e77/md08003300-DZ-05-jpg
+// https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/58011568-5e5f-4c4a-ae7c-56483d871b78/md08003300-DZ-02-jpg
+// https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/1367eacc-3d1f-4e79-b8fa-590c9c18b9e4/md08003300-DZ-03-jpg
+// https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/514d8a28-2af1-4f88-8c1c-7b50d932dfa5/md08003300-DZ-01-jpg
 
 const images = [
     {
-        "image": "https://images.samsung.com/is/image/samsung/p6pim/pk/qa85qn85aauxmm/gallery/pk-neo-qled-qn85a-qa85qn85aauxmm-532919690?$684_547_PNG$"
-    },
-
-    {
-        "image": "https://images.samsung.com/is/image/samsung/p6pim/pk/qa85qn85aauxmm/gallery/pk-neo-qled-qn85a-qa85qn85aauxmm-532919984?$684_547_PNG$"
+        "image": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/58011568-5e5f-4c4a-ae7c-56483d871b78/md08003300-DZ-02-jpg"
     },
     {
-        "image": "https://images.samsung.com/is/image/samsung/p6pim/pk/qa85qn85aauxmm/gallery/pk-neo-qled-qn85a-qa85qn85aauxmm-532919972?$684_547_PNG$"
+        "image": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/1367eacc-3d1f-4e79-b8fa-590c9c18b9e4/md08003300-DZ-03-jpg"
     },
     {
-        "image": "https://images.samsung.com/is/image/samsung/p6pim/pk/qa85qn85aauxmm/gallery/pk-neo-qled-qn85a-qa85qn85aauxmm-532920754?$684_547_PNG$"
+        "image": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/514d8a28-2af1-4f88-8c1c-7b50d932dfa5/md08003300-DZ-01-jpg"
     },
     {
-        "image": "https://images.samsung.com/is/image/samsung/p6pim/pk/qa85qn85aauxmm/gallery/pk-neo-qled-qn85a-qa85qn85aauxmm-454908863?$2052_1641_PNG$"
+        "image": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/d6af57ef-afbe-4da3-99fc-85026dfa2544/md08003300-DZ-13-jpg"
     },
     {
-        "image": "https://images.samsung.com/is/image/samsung/p6pim/pk/qa85qn85aauxmm/gallery/pk-neo-qled-qn85a-qa85qn85aauxmm-537115052?$2052_1641_PNG$"
-    }
+        "image": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/77c7117d-b652-4c8b-a266-5e36db20a229/md08003300-DZ-06-jpg"
+    },
+    {
+        "image": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/82f45bc8-b8ef-47e1-b700-f6acead88e77/md08003300-DZ-05-jpg"
+    },
 ]
 
 
@@ -29,7 +33,7 @@ const Product = () => {
     console.log(images)
     const product = {
         "name": "Samsung Neo QLED 4K Smart TV",
-        "category": "LCD/LED",
+        "category": "Movies & TV",
         "price": "$5,790.00",
     }
     return (
@@ -40,15 +44,23 @@ const Product = () => {
                 </section>
 
                 <section className="product-info__details">
-                    <div className="product-name">
-                        {product.name}
+                    <div>
+
+                        <div className="product-name">
+                            {product.name}
+                        </div>
+                        <div className="product-category">
+                            {product.category}
+                        </div>
+                        <div className="product-price">
+                            {product.price}
+                        </div>
                     </div>
-                    <div className="product-category">
-                        {product.category}
+
+                    <div className="product-page__actions">
+                        <button className="btn btn-primary">Add to Cart</button>
                     </div>
-                    <div className="product-price">
-                        {product.price}
-                    </div>
+
                 </section>
             </section>
 
@@ -98,3 +110,4 @@ export const Carousel = ({ slides = [] }) => {
         </div >
     )
 }
+
