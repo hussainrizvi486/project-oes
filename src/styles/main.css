@@ -15,3 +15,12 @@
 .product-category {
     color: var(--color-primary);
 }
+
+.product-price {
+    margin-block: .5rem;
+    font-size: var(--text-lg);
+}
+
+.product-page__actions {
+    margin-block: 1rem;
+}
