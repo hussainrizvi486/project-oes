@@ -62,6 +62,8 @@ const Product = () => {
                     </div>
 
                 </section>
+
+                section.product-media__section
             </section>
 
         </main>
