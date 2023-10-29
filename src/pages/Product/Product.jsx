@@ -63,7 +63,7 @@ const Product = () => {
 
                 </section>
 
-                section.product-media__section
+                <section className="product-media__section"></section>
             </section>
 
         </main>
