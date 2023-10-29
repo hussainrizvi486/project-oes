@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom"
+
 export const ProductCard = () => {
     return (
         <div className="product-card">
-            <div className="product-card__image">
-                <img src="https://www.lg.com/us/images/promotion/thumbnail/he_promo_monitors_ultragear_tile[20230623_022244].jpg" alt="" />
-            </div>
+            <Link to="/product">
+                <div className="product-card__image">
+                    <img src="https://static-01.daraz.pk/p/7f10ea52de669d1642d75a569a3367bb.jpg_750x750.jpg_.webp"  />
+                </div>
+            </Link>
             <div className="product-card__details">
                 <div className="card-details__upper">
                     <div className="product-card__category text-sm ">TV/LCD</div>
@@ -15,7 +19,7 @@ export const ProductCard = () => {
                     <div className="product-card__price font-medium">$2,997.55</div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
