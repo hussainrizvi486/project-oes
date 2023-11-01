@@ -1,5 +1,6 @@
 import { Search, ShoppingCart, User2 } from "lucide-react"
 import { Link } from "react-router-dom"
+import PropTypes from 'prop-types';
 
 export const Header = () => {
     return (
@@ -43,7 +44,17 @@ const HeaderSearchBox = ({ placeholder = "Type somthing here." }) => {
                 <button >
                     <Search />
                 </button>
+            </div>
 
+            <div className="search-results__container">
+                <ul className="search-results__list">
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum Lorem, ipsum.</li>
+                    <li>Lorem ipsum dolor sit. Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum </li>
+                    <li>Lorem ipsum Lorem, ipsum.</li>
+                    <li>Lorem ipsum dolor sit. Lorem ipsum dolor sit.</li>
+                </ul>
             </div>
         </form>
     )
