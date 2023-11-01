@@ -52,7 +52,7 @@ const Product = () => {
                         <div className="product-category">
                             {product.category}
                         </div>
-                        <div className="product-price">
+                        <div className="product-price" >
                             {product.price}
                         </div>
                     </div>
@@ -62,9 +62,9 @@ const Product = () => {
                     </div>
 
                 </section>
-
-                section.product-media__section
             </section>
+
+            
 
         </main>
     )

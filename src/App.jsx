@@ -8,6 +8,7 @@ import { Header } from "./components"
 
 const Home = lazy(() => import("./pages/Home/Home"))
 const Product = lazy(() => import("./pages/Product/Product"))
+const Login = lazy(() => import("./pages/Login/Login"))
 
 
 
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
       </main>
