@@ -64,7 +64,11 @@ const Product = () => {
                 </section>
             </section>
 
-            
+            <div className="product-page__description-section">
+                <div style={{fontSize: "1.25rem", fontWeight: "600"}}>Description</div>
+                <br />
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus assumenda quam nobis. Enim sapiente eos corrupti ullam! Voluptas delectus, maiores magni assumenda, eum error nemo ipsa fuga debitis culpa ullam iusto aliquid odit mollitia maxime rem sequi cupiditate. Tenetur, quaerat?</div>
+            </div>
 
         </main>
     )
