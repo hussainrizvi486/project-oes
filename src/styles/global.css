@@ -40,6 +40,7 @@ video {
 
 body {
     font-family: 'Roboto', sans-serif;
+    color: #555;
 }
 
 #app-container {
@@ -48,6 +49,8 @@ body {
     margin-inline: auto !important;
 }
 
+
+/* Button */
 .btn {
     padding: .6rem 1.5rem;
     border: none;
@@ -66,12 +69,16 @@ body {
     background-color: #409aff;
 }
 
+.btn-full {
+    width: 100%;
+}
 
 /*  */
 
-/* .page-container {
-    padding-inline: .5rem;
-} */
+.page-container {
+    /* padding-inline: .5rem; */
+    min-height: 100vh;
+}
 
 /* Carousel */
 

@@ -18,13 +18,19 @@ function App() {
     <Suspense fallback={<>Loading...</>}>
       <main id="app-container">
         <div className="page-container">
-          <Header />
           <Routes>
+            {/* <Header /> */}
             <Route path="/" element={<Home />} />
+
             <Route path="/product" element={<Product />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/cart" element={<Cart />} />
           </Routes>
+
+          <Routes>
+            <Route path="/cart" element={<Cart />} />
+
+          </Routes>
+
         </div>
       </main>
     </Suspense>
