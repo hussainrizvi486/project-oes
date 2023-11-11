@@ -1,6 +1,5 @@
 import { Search, ShoppingCart, User2 } from "lucide-react"
 import { Link } from "react-router-dom"
-import PropTypes from 'prop-types';
 
 export const Header = () => {
     return (

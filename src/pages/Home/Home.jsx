@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { ProductCard } from "../../components"
 import axios from 'axios';
 import { Spinner } from "../../components/Loaders/Spinner";
+import { Header } from "../../components"
 
 const Home = () => {
     const [products, setProducts] = useState([])
@@ -21,15 +22,25 @@ const Home = () => {
         console.log("Rendered")
         getData()
     }, [])
-    return (
-        <main>
 
-            {loading ? <Spinner /> :
-                <div className="products-grid">
-                    {products.map((val) => <ProductCard key={val.id} price={val.price} name={val.title} image={val.image} />)}
-                </div>
-            }
-        </main>
+    const Loader = <div className="home-spinner-wrapper flex-center" style={{ height: "50vh" }}>
+        <Spinner />
+    </div>
+
+    return (
+        <>
+            <Header />
+
+            <main>
+
+                {loading ? Loader :
+                    <div className="products-grid">
+                        {products.map((val) => <ProductCard key={val.id} price={val.price} name={val.title} image={val.image} />)}
+                    </div>
+                }
+            </main>
+        </>
+
     )
 }
 

@@ -4,12 +4,14 @@ import "./styles/global.css"
 import "./styles/utils.css"
 import "./styles/main.css"
 import "./styles/header.css"
+import "./styles/components.css"
 import { Header } from "./components"
 
 const Home = lazy(() => import("./pages/Home/Home"))
 const Product = lazy(() => import("./pages/Product/Product"))
 const Login = lazy(() => import("./pages/Login/Login"))
 const Cart = lazy(() => import("./pages/Cart/Cart"))
+
 
 
 
