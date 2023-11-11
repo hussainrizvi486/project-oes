@@ -20,11 +20,11 @@ export const Header = () => {
             <div className="header-right__section">
                 <nav className="header-nav">
 
-                    <Link className="header-nav__link">
+                    <Link className="header-nav__link" to={"/cart"}>
                         <ShoppingCart />
                     </Link>
 
-                    <Link className="header-nav__link">
+                    <Link className="header-nav__link" to={"/login"}>
                         <User2 />
                     </Link>
 

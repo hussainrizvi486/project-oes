@@ -2,10 +2,18 @@ import { ArrowLeft, Trash2 } from "lucide-react"
 
 const Cart = () => {
     return (
+        <>
             <div className='cart-page'>
-
+                <div className="header-simple">
+                    <section><ArrowLeft /></section>
+                    <section>
+                        <div className="plain-header__heading">Your Cart</div>
+                    </section>
+                    <section></section>
+                </div>
                 <div className="cart-items__wrapper">
                     <div className="cart-items__container">
+                        <CartItemCard />
                         <CartItemCard />
                         <CartItemCard />
                         <CartItemCard />
@@ -16,6 +24,8 @@ const Cart = () => {
                     <OrderSummary />
                 </div>
             </div>
+        </>
+
     )
 }
 
@@ -41,7 +51,7 @@ const OrderSummary = () => {
 
 
             <div>
-                <button className="btn btn-full btn-primary">
+                <button className="btn btn-full btn-primary or-sum-btn-checkt">
                     Checkout
                 </button>
             </div>
