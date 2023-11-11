@@ -1,4 +1,4 @@
-.flex {
+.d-flex {
     display: flex;
 }
 
@@ -66,15 +66,55 @@
     font-weight: 800;
 }
 
-.font-black  {
+.font-black {
     font-weight: 900;
 }
 
 
 .text-center {
-  text-align: center;  
-} 
+    text-align: center;
+}
 
+/* Text Sizes */
 .text-sm {
     font-size: var(--text-sm);
+}
+
+.text-md {
+    font-size: var(--text-md);
+}
+
+.text-lg {
+    font-size: var(--text-lg);
+}
+
+/*  */
+
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.img-cover {
+    object-fit: cover;
+}
+
+.img-contain {
+    object-fit: contain;
+}
+
+/* Margins */
+.my-2 {
+    margin-block: .5rem;
+}
+
+
+.flex-jbt-atc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
