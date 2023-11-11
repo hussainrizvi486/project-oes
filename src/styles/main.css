@@ -176,13 +176,6 @@
 }
 
 .auth-form__submit-btn {
-    background-color: #434343;
-    border: none;
-    color: #fff;
-    width: 100%;
-    padding: .6rem;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
     margin-top: 1.5rem;
 
 }
@@ -255,7 +248,7 @@
     padding: .6rem .5rem;
     margin-bottom: 1rem;
     border-radius: .25rem;
-    box-shadow: 0 0 10px #c5c5c5;
+    box-shadow: 0 0 10px #e1e1e1;
 }
 
 .cart-item-card>.cart-item-card__image-container {
@@ -293,6 +286,7 @@
 }
 
 .cart-page {
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }

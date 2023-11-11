@@ -1,6 +1,9 @@
+import { Header } from "../../components"
+
 const Login = () => {
     return (
         <>
+        <Header />
             <div>
                 <form className='auth-form-login'>
                     <div className="text-center auth-form__upper-text">
@@ -30,7 +33,8 @@ const Login = () => {
                     <div>
 
                         <div className="btn-container">
-                            <button type="submit" className="auth-form__submit-btn">Login </button>
+                            <button type="submit" className="auth-form__submit-btn 
+                            btn btn-full btn-primary btn-sm">Login </button>
                         </div>
                         <div className="auth-form__optional-text">
                             Don&apos;t have an account ? Register Here

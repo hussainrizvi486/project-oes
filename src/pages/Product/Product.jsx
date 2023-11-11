@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { useState } from "react"
+import { Header } from "../../components"
 // https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/d6af57ef-afbe-4da3-99fc-85026dfa2544/md08003300-DZ-13-jpg
 // https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/77c7117d-b652-4c8b-a266-5e36db20a229/md08003300-DZ-06-jpg
 // https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/82f45bc8-b8ef-47e1-b700-f6acead88e77/md08003300-DZ-05-jpg
@@ -37,40 +38,43 @@ const Product = () => {
         "price": "$5,790.00",
     }
     return (
-        <main className="product-page_main">
-            <section className="product-page__display-section">
-                <section className="product-media__section">
-                    <Carousel slides={images} />
+        <>
+            <Header />
+            <main className="product-page_main">
+                <section className="product-page__display-section">
+                    <section className="product-media__section">
+                        <Carousel slides={images} />
+                    </section>
+
+                    <section className="product-info__details">
+                        <div>
+
+                            <div className="product-name">
+                                {product.name}
+                            </div>
+                            <div className="product-category">
+                                {product.category}
+                            </div>
+                            <div className="product-price" >
+                                {product.price}
+                            </div>
+                        </div>
+
+                        <div className="product-page__actions">
+                            <button className="btn btn-primary">Add to Cart</button>
+                        </div>
+
+                    </section>
                 </section>
 
-                <section className="product-info__details">
-                    <div>
+                <div className="product-page__description-section">
+                    <div style={{ fontSize: "1.25rem", fontWeight: "600" }}>Description</div>
+                    <br />
+                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus assumenda quam nobis. Enim sapiente eos corrupti ullam! Voluptas delectus, maiores magni assumenda, eum error nemo ipsa fuga debitis culpa ullam iusto aliquid odit mollitia maxime rem sequi cupiditate. Tenetur, quaerat?</div>
+                </div>
 
-                        <div className="product-name">
-                            {product.name}
-                        </div>
-                        <div className="product-category">
-                            {product.category}
-                        </div>
-                        <div className="product-price" >
-                            {product.price}
-                        </div>
-                    </div>
-
-                    <div className="product-page__actions">
-                        <button className="btn btn-primary">Add to Cart</button>
-                    </div>
-
-                </section>
-            </section>
-
-            <div className="product-page__description-section">
-                <div style={{fontSize: "1.25rem", fontWeight: "600"}}>Description</div>
-                <br />
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus assumenda quam nobis. Enim sapiente eos corrupti ullam! Voluptas delectus, maiores magni assumenda, eum error nemo ipsa fuga debitis culpa ullam iusto aliquid odit mollitia maxime rem sequi cupiditate. Tenetur, quaerat?</div>
-            </div>
-
-        </main>
+            </main>
+        </>
     )
 }
 

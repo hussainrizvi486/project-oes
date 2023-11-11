@@ -2,12 +2,6 @@ import { ArrowLeft, Trash2 } from "lucide-react"
 
 const Cart = () => {
     return (
-        <div>
-            {/* <header className="page-simple-header">
-                <section><ArrowLeft /></section>
-                <section className="page-title">Order Details</section>
-                <section></section>
-            </header> */}
             <div className='cart-page'>
 
                 <div className="cart-items__wrapper">
@@ -15,7 +9,6 @@ const Cart = () => {
                         <CartItemCard />
                         <CartItemCard />
                         <CartItemCard />
-
                     </div>
                 </div>
 
@@ -23,7 +16,6 @@ const Cart = () => {
                     <OrderSummary />
                 </div>
             </div>
-        </div>
     )
 }
 
