@@ -108,3 +108,21 @@
     font-family: "Poppins";
     color: #000;
 }
+
+/* header-simple  */
+.header-simple {
+    display: flex;
+    align-items: center;
+    padding: 1rem .5rem;
+}
+
+.header-simple section {
+    flex-basis: 100%;
+
+}
+
+.plain-header__heading {
+    font-weight: 600;
+    font-size: var(--text-lg);
+    text-align: center;
+}
