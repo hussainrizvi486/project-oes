@@ -6,8 +6,7 @@ export const Header = () => {
         <header className="page-header header-main__nav">
             <div className="header-left__section">
                 <div className="header-text__logo">
-                    <Link to={""}>Logo</Link>
-                    <Link to={"/address"}>address</Link>
+                    <Link to={"/"}>CodeCare</Link>
                 </div>
             </div>
 
