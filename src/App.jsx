@@ -11,6 +11,7 @@ const Home = lazy(() => import("./pages/Home/Home"))
 const Product = lazy(() => import("./pages/Product/Product"))
 const Login = lazy(() => import("./pages/Login/Login"))
 const Cart = lazy(() => import("./pages/Cart/Cart"))
+const Address = lazy(() => import("./pages/Profile/Address"))
 
 import { HomeRoute, LoginRoute } from "./Routes"
 
@@ -30,6 +31,7 @@ function App() {
 
           <Routes>
             <Route path="/cart" element={<Cart />} />
+            <Route path="/address" element={<Address />} />
 
           </Routes>
 

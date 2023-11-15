@@ -125,4 +125,5 @@
     font-weight: 600;
     font-size: var(--text-lg);
     text-align: center;
+    white-space: nowrap !important;
 }
