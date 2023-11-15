@@ -5,27 +5,27 @@ import "./styles/utils.css"
 import "./styles/main.css"
 import "./styles/header.css"
 import "./styles/components.css"
-import { Header } from "./components"
+import { Header, Spinner } from "./components"
 
 const Home = lazy(() => import("./pages/Home/Home"))
 const Product = lazy(() => import("./pages/Product/Product"))
 const Login = lazy(() => import("./pages/Login/Login"))
 const Cart = lazy(() => import("./pages/Cart/Cart"))
 
-
+import { HomeRoute, LoginRoute } from "./Routes"
 
 
 function App() {
   return (
-    <Suspense fallback={<>Loading...</>}>
+    <Suspense fallback={<Spinner />}>
       <main id="app-container">
         <div className="page-container">
           <Routes>
             {/* <Header /> */}
-            <Route path="/" element={<Home />} />
+            <Route path={HomeRoute} element={<Home />} />
 
             <Route path="/product" element={<Product />} />
-            <Route path="/login" element={<Login />} />
+            <Route path={LoginRoute} element={<Login />} />
           </Routes>
 
           <Routes>

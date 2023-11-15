@@ -16,7 +16,7 @@ export const ProductCard = ({ name, price, image }) => {
                 </div>
 
                 <div className="card-details__lower">
-                    <div className="product-card__price font-medium">${price}</div>
+                    <div className="product-card__price font-medium">${parseFloat(price)}</div>
                 </div>
             </div>
         </div>
