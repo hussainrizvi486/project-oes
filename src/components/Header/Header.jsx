@@ -1,4 +1,4 @@
-import { Search, ShoppingCart, User2 } from "lucide-react"
+import { Search, ShoppingCart, User2, BookUser } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export const Header = () => {
@@ -6,7 +6,11 @@ export const Header = () => {
         <header className="page-header header-main__nav">
             <div className="header-left__section">
                 <div className="header-text__logo">
+<<<<<<< HEAD
                     <Link to={"/"}>CodeCare</Link>
+=======
+                    <Link to={""}>Logo</Link>
+>>>>>>> f256f8327c4e0cbe9119a26103bf5d90045caaff
                 </div>
             </div>
 
@@ -27,6 +31,12 @@ export const Header = () => {
                     <Link className="header-nav__link" to={"/login"}>
                         <User2 />
                     </Link>
+
+                    <Link className="header-nav__link" to={"/address"}>
+
+                        <BookUser />
+                    </Link>
+
 
                 </nav>
             </div>

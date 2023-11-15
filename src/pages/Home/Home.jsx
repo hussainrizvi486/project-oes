@@ -7,7 +7,7 @@ const data = [
     {
         "image": "https://i.seadn.io/s/raw/files/b915d9ab2718f1b2d9a3dc4c79c99430.png?auto=format&dpr=1&h=500&fr=1",
         "title": "Arc8 GameFest Pass | November '23",
-        "price": 7
+        "price": 13.60
     },
     {
         "image": "https://i.seadn.io/s/raw/files/19e4902580b6488e6f8da66fbdad5e2d.png?auto=format&dpr=1&h=500&fr=1",
