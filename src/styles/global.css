@@ -10,6 +10,7 @@
     --text-4xl: 2.25rem;
     --text-5xl: 2.5rem;
 
+    --icon-size-md: 1rem;
 
     --color-dark-grey: #434343;
     --color-grey-md: #666;
@@ -89,6 +90,21 @@ body {
 
 .btn-full {
     width: 100%;
+}
+
+.btn-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    line-height: 1;
+    font-size: var(--text-sm);
+
+}
+
+.btn-icon svg {
+    height: var(--icon-size-md);
+    width: var(--icon-size-md);
 }
 
 /*  */

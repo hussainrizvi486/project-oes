@@ -4,13 +4,13 @@ const Cart = () => {
     return (
         <>
             <div className='cart-page'>
-                <div className="header-simple">
+                <header className="header-simple">
                     <section><ArrowLeft /></section>
                     <section>
                         <div className="plain-header__heading">Your Cart</div>
                     </section>
                     <section></section>
-                </div>
+                </header>
                 <div className="cart-items__wrapper">
                     <div className="cart-items__container">
                         <CartItemCard />
