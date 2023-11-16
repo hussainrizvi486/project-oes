@@ -14,9 +14,6 @@ const Cart = () => {
                 <div className="cart-items__wrapper">
                     <div className="cart-items__container">
                         <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
                     </div>
                 </div>
 

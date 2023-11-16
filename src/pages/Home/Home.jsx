@@ -7,17 +7,17 @@ const data = [
     {
         "image": "https://i.seadn.io/s/raw/files/b915d9ab2718f1b2d9a3dc4c79c99430.png?auto=format&dpr=1&h=500&fr=1",
         "title": "Arc8 GameFest Pass | November '23",
-        "price": 7
+        "price": 13.60
     },
     {
         "image": "https://i.seadn.io/s/raw/files/19e4902580b6488e6f8da66fbdad5e2d.png?auto=format&dpr=1&h=500&fr=1",
         "title": "zkMon by Polychain Monsters x Modulus Labs",
-        "price": 11
+        "price": 11.45
     },
     {
         "image": "https://i.seadn.io/s/raw/files/108dd149cdb48094ec671e3b4b100c48.png?auto=format&dpr=1&h=500&fr=1",
         "title": "Michelin 3xplorer Club",
-        "price": 80
+        "price": 80.56
     },
     {
         "image": "https://i.seadn.io/s/raw/files/a9b0c35cf9c8929fcd607ba6c0a1c7a3.png?auto=format&dpr=1&h=500&fr=1",
@@ -27,20 +27,19 @@ const data = [
     {
         "image": "https://i.seadn.io/gcs/files/1ffce3907fbbf9db9c3197074ba27f82.png?auto=format&dpr=1&h=500&fr=1",
         "title": "The Grapes",
-        "price": 36
+        "price": 36.43
     },
     {
         "image": "https://i.seadn.io/gae/ppMol-GqnTJ3-D698dX6hfIk2LBmk-x-bwalMcHrjry0zttv5upSAJY4aYJWLPrmW7ps544qm3TvxoOgNR6hPigIMrZhq3QkrCal?auto=format&dpr=1&h=500&fr=1",
         "title": "Wonky Stonks",
-        "price": 44
+        "price": 44.55
     },
     {
         "image": "https://i.seadn.io/s/raw/files/108dd149cdb48094ec671e3b4b100c48.png?auto=format&dpr=1&h=500&fr=1",
         "title": "Michelin 3xplorer Club",
-        "price": 70
+        "price": 70.00
     }
 ]
-
 
 const Home = () => {
     const [products, setProducts] = useState([])

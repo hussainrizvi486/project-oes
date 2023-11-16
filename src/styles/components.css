@@ -127,3 +127,15 @@
     text-align: center;
     white-space: nowrap !important;
 }
+
+/* address-card__wrapper */
+
+.address-card__wrapper {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    box-shadow: 0 0 5px #b3b3b3;
+    padding: .5rem;
+    border-radius: .5rem;
+}

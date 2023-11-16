@@ -344,3 +344,7 @@
 .add-address__btn {
     box-shadow: 0 0 5px #a3a3a3;
 }
+
+.address-cards-container {
+    padding-inline: .5rem;
+}
