@@ -163,6 +163,13 @@
     text-align: center;
 }
 
+.auth-form__msg-container {
+    margin-block: 1rem;
+    font-size: var(--text-sm);
+    color: #cd0000;
+}
+
+
 /* Login */
 .auth-form__upper-text h1 {
     font-size: var(--text-xl);
@@ -177,6 +184,8 @@
 
 .auth-form__submit-btn {
     margin-top: 1.5rem;
+
+
 
 }
 
