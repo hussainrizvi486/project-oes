@@ -51,6 +51,11 @@ const Login = () => {
         }
 
 
+<<<<<<< HEAD
+        
+
+
+=======
         Login({
             password: passwordRef.current.value,
             email: userNameRef.current.value
@@ -71,6 +76,7 @@ const Login = () => {
 
         console.log(user)
 
+>>>>>>> 61212ea5738db9d5ae394a2bf109c654d49da1d1
 
     }
 

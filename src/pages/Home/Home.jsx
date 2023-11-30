@@ -72,7 +72,7 @@ const Home = () => {
 
                 {loading ? Loader :
                     <div className="products-grid">
-                        {products.map((val) => <ProductCard key={val.id} price={val.price} name={val.title} image={val.image} />)}
+                        {products.map((val, u) => <ProductCard key={u} price={val.price} name={val.title} image={val.image} />)}
                     </div>
                 }
             </main>

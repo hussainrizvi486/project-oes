@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react"
+import React, { Suspense, lazy } from "react"
 import { Route, Routes } from "react-router-dom"
 import "./styles/global.css"
 import "./styles/utils.css"
@@ -17,6 +17,7 @@ import { HomeRoute, LoginRoute } from "./Routes"
 
 
 function App() {
+  console.log(import.meta.env.VITE_API_URL)
   return (
     <Suspense fallback={<Spinner />}>
       <main id="app-container">
