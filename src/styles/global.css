@@ -15,45 +15,16 @@
 
     --color-dark-grey: #434343;
     --color-grey-md: #666;
+    --color-pink: #f11682;
 
-    --color-primary: var(--color-dark-grey);
+    --color-primary:  var(--color-dark-grey);
     --color-primary-bg: var(--color-dark-grey);
     --text-color-primary: var(--color-grey-md);
-
     --font-fm-poppins: 'Poppins', 'Roboto', sans-serif;
 }
 
 
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-input,
-textarea {
-    outline: transparent;
-}
-
-img,
-svg,
-video {
-    display: block;
-    max-width: 100%;
-}
-
-svg {
-    color: var(--color-dark-grey);
-}
-
 body {
-    font-family: 'Roboto', sans-serif;
     color: var(--text-color-primary);
 }
 

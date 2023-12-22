@@ -1,12 +1,15 @@
 import { Search, ShoppingCart, User2, MapPin } from "lucide-react"
 import { Link } from "react-router-dom"
+import Logo from "../../assets/logo.png"
 
 export const Header = () => {
     return (
         <header className="page-header header-main__nav">
             <div className="header-left__section">
                 <div className="header-text__logo">
-                    <Link to={"/"}>CodeCare</Link>
+                    <Link to={"/"}>
+                        <img src={Logo} alt="" />
+                    </Link>
                 </div>
             </div>
 

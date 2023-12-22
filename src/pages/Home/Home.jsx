@@ -19,11 +19,11 @@ const data = [
         "title": "Michelin 3xplorer Club",
         "price": 80.56
     },
-    {
-        "image": "https://i.seadn.io/s/raw/files/a9b0c35cf9c8929fcd607ba6c0a1c7a3.png?auto=format&dpr=1&h=500&fr=1",
-        "title": "RESONANCE By Tristan Rettich",
-        "price": 23
-    },
+    // {
+    //     "image": "https://i.seadn.io/s/raw/files/a9b0c35cf9c8929fcd607ba6c0a1c7a3.png?auto=format&dpr=1&h=500&fr=1",
+    //     "title": "RESONANCE By Tristan Rettich",
+    //     "price": 23
+    // },
     {
         "image": "https://i.seadn.io/gcs/files/1ffce3907fbbf9db9c3197074ba27f82.png?auto=format&dpr=1&h=500&fr=1",
         "title": "The Grapes",
@@ -70,11 +70,38 @@ const Home = () => {
 
             <main>
 
-                {loading ? Loader :
+                {/* {loading ? Loader :
                     <div className="products-grid">
                         {products.map((val, u) => <ProductCard key={u} price={val.price} name={val.title} image={val.image} />)}
                     </div>
+                } */}
+                {loading ? Loader :
+                    <section className="home-section">
+                        <div className="home-section-heading">Trending products</div>
+                        <div className="home-section-products products-grid">
+                            {products.map((val, u) => <ProductCard key={u} price={val.price} name={val.title} image={val.image} />)}
+                        </div>
+                    </section>
                 }
+                
+                {loading ? Loader :
+                    <section className="home-section">
+                        <div className="home-section-heading">Top Selling</div>
+                        <div className="home-section-products products-grid">
+                            {products.map((val, u) => <ProductCard key={u} price={val.price} name={val.title} image={val.image} />)}
+                        </div>
+                    </section>
+                }
+
+                {loading ? Loader :
+                    <section className="home-section">
+                        <div className="home-section-heading">Top Rated</div>
+                        <div className="home-section-products products-grid">
+                            {products.map((val, u) => <ProductCard key={u} price={val.price} name={val.title} image={val.image} />)}
+                        </div>
+                    </section>
+                }
+
             </main>
         </>
 

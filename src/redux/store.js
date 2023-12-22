@@ -1,11 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { reducer } from './reducers';
-import { apiSlice } from "./slices/apiSlice";
 import authReducer from "./slices/authSlice"
+
+export const API_URL = import.meta.env.VITE_API_URL
 
 const store = configureStore({
     reducer: {
-        [apiSlice.reducerPath] : apiSlice.reducer,
         auth: authReducer
     }
 });
