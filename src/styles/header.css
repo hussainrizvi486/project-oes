@@ -25,6 +25,11 @@
     all: unset;
 }
 
+
+.header-text__logo a img{
+    max-width: 150px;
+}
+
 .header-nav {
     display: flex;
     justify-content: flex-end;

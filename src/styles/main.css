@@ -253,7 +253,7 @@
 }
 
 .cart-item-card {
-    height: 6rem;
+    height: 8rem;
     padding: .6rem .5rem;
     margin-bottom: 1rem;
     border-radius: .25rem;
@@ -302,6 +302,18 @@
 
 .cart-items__wrapper {
     flex: auto;
+    overflow: scroll;
+    max-height: 90vh;
+}
+
+.cart-items__wrapper::-webkit-scrollbar {
+    /* background-color: #434343; */
+    width: 3px;
+}
+.cart-items__wrapper::-webkit-scrollbar-thumb {
+    background-color: #434343;
+    border-radius: 9px;
+    /* width: 3px; */
 }
 
 @media (min-width: 900px) {

@@ -12,8 +12,23 @@ const Cart = () => {
                     <section></section>
                 </header>
                 <div className="cart-items__wrapper">
+                    <div className="ci-w2">
+
                     <div className="cart-items__container">
                         <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                        <CartItemCard />
+                    </div>
                     </div>
                 </div>
 

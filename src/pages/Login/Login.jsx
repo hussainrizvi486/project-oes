@@ -1,17 +1,16 @@
 import { useRef, useState } from "react"
 import { Header } from "../../components"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 
 
 const Login = () => {
     const userNameRef = useRef()
     const passwordRef = useRef()
     const [FormMsg, setFormMsg] = useState("")
-
-    const user = useSelector(state => state.custom.user)
+    const user = useSelector((state) => state.auth.user)
     console.log(user)
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const submitForm = (e) => {
         e.preventDefault()
@@ -50,35 +49,14 @@ const Login = () => {
             setFormMsg("")
         }
 
-
-<<<<<<< HEAD
-        
-
-
-=======
-        Login({
-            password: passwordRef.current.value,
-            email: userNameRef.current.value
-        })
-    }
-
-    const Login = (credentials = {}) => {
-        // const Email = credentials.email
-        // const Password = credentials.password
-
-        const user1 = credentials
-
-        dispatch({
-            type: "setUser",
-            payload: user1
-        })
-
-
-        console.log(user)
-
->>>>>>> 61212ea5738db9d5ae394a2bf109c654d49da1d1
+        // LoginUser({
+        //     "password": passwordRef.current.value,
+        //     "username": userNameRef.current.value
+        // })
+        // console.log(user)
 
     }
+
 
 
     return (

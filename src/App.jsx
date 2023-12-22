@@ -5,7 +5,10 @@ import "./styles/utils.css"
 import "./styles/main.css"
 import "./styles/header.css"
 import "./styles/components.css"
-import { Header, Spinner } from "./components"
+import "./styles/reset.css"
+import "./styles/pages/home.css"
+
+import { Spinner } from "./components"
 
 const Home = lazy(() => import("./pages/Home/Home"))
 const Product = lazy(() => import("./pages/Product/Product"))
@@ -14,27 +17,27 @@ const Cart = lazy(() => import("./pages/Cart/Cart"))
 const Address = lazy(() => import("./pages/Profile/Address"))
 
 import { HomeRoute, LoginRoute } from "./Routes"
+import { useSelector } from "react-redux"
 
 
 function App() {
-  console.log(import.meta.env.VITE_API_URL)
+  const user = useSelector((state) => state.auth.user)
+  console.log(user)
   return (
     <Suspense fallback={<Spinner />}>
       <main id="app-container">
         <div className="page-container">
           <Routes>
             {/* <Header /> */}
-            <Route path={HomeRoute} element={<Home />} />
-
+            <Route path="/" element={<Home />} />
             <Route path="/product" element={<Product />} />
-            <Route path={LoginRoute} element={<Login />} />
-          </Routes>
-
-          <Routes>
+            <Route path="/login" element={<Login />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/address" element={<Address />} />
+            <Route path="*" element={<p>Path not resolved</p>} />
 
           </Routes>
+
 
         </div>
       </main>
