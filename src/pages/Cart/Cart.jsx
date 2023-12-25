@@ -1,34 +1,46 @@
-import { ArrowLeft, Trash2 } from "lucide-react"
+import { ArrowLeft, Minus, Plus, Trash2 } from "lucide-react"
+import { Link } from "react-router-dom"
+import { Header } from "../../components"
 
 const Cart = () => {
     return (
         <>
+            {/* <div className="header-simple">
+                <Header />
+
+            </div > */}
             <div className='cart-page'>
                 <header className="header-simple">
-                    <section><ArrowLeft /></section>
+                    <section>
+                        <Link to={"/"}>
+                            <ArrowLeft />
+                        </Link>
+                    </section>
                     <section>
                         <div className="plain-header__heading">Your Cart</div>
                     </section>
                     <section></section>
                 </header>
+
+
                 <div className="cart-items__wrapper">
                     <div className="ci-w2">
 
-                    <div className="cart-items__container">
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                        <CartItemCard />
-                    </div>
+                        <div className="cart-items__container">
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                            <CartItemCard />
+                        </div>
                     </div>
                 </div>
 
@@ -74,7 +86,8 @@ const OrderSummary = () => {
 const CartItemCard = () => {
     const item = {
         price: "$69,456,56",
-        name: "Radeon™ RX 580 GAMING 8G"
+        name: "Radeon™ RX 580 GAMING 8G",
+        qty: 1
     }
     return (
         <div className="cart-item-card d-flex ">
@@ -93,6 +106,14 @@ const CartItemCard = () => {
 
                     <div className="remove-cart-item">
                         <Trash2 />
+                    </div>
+                </div>
+
+                <div className="cart-qty-wrapper">
+                    <div className="cart-qty-container">
+                        <button className="cart-qty-btn"><Minus /></button>
+                        <input type="number" className="cart-qty-input" defaultValue={item.qty} />
+                        <button className="cart-qty-btn"><Plus /></button>
                     </div>
                 </div>
             </div>

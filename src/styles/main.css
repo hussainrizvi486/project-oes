@@ -127,14 +127,14 @@
 
 /*  */
 
-.auth-form-login {
+.auth-form {
     margin-top: 2.5rem;
     max-width: 25rem;
     margin-inline: auto;
     padding: .5rem;
 }
 
-.auth-form-login .input-box {
+.auth-form .input-box {
     margin-bottom: .5rem;
 }
 
@@ -189,8 +189,20 @@
 
 }
 
+.auth-form-col {
+    display: flex;
+    gap: .5rem;
+}
+.auth-form-col .input-box {
+    flex-basis: 100%;
+}
+
+.auth-form.register {
+    max-width: 30rem;
+}
+
 @media (min-width: 768px) {
-    .auth-form-login {
+    .auth-form {
         margin-top: 4rem;
     }
 }
@@ -310,6 +322,7 @@
     /* background-color: #434343; */
     width: 3px;
 }
+
 .cart-items__wrapper::-webkit-scrollbar-thumb {
     background-color: #434343;
     border-radius: 9px;

@@ -63,7 +63,7 @@ const Login = () => {
         <>
             <Header />
             <div>
-                <form className='auth-form-login' onSubmit={submitForm}>
+                <form className='auth-form' onSubmit={submitForm}>
                     <div className="text-center auth-form__upper-text">
                         <h1>Login</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint. Lorem ipsum, dolor sit amet consectetur adipisicing.</p>

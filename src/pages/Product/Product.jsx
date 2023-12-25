@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { useState } from "react"
 import { Header } from "../../components"

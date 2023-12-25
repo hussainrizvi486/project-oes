@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ProductCard } from "../../components";
 import axios from 'axios';
 import { Header, Spinner } from "../../components";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const data = [
     {
@@ -44,31 +45,83 @@ const data = [
 const Home = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-    const getData = async () => {
-        try {
-            const response = await axios.get("https://fakestoreapi.com/products/")
-            setProducts(data)
-            console.log(response.data)
-            setLoading(false)
-        } catch (error) {
-            alert(error)
-        }
+    // const getData = async () => {
+    //     try {
+    //         const response = await axios.get("https://fakestoreapi.com/products/")
+    //         setProducts(data)
+    //         console.log(response.data)
+    //     } catch (error) {
+    //         alert(error)
+    //     }
 
-    }
+    // }
     useEffect(() => {
-        getData()
+        setLoading(false)
+        setProducts(data)
+        // getData()
     }, [])
 
+    const slides = [
+        "https://icms-image.slatic.net/images/ims-web/52d77700-a938-4cc0-8aa7-6e7bb428a0ac.jpg",
+        "https://icms-image.slatic.net/images/ims-web/cd8d8e75-cbc4-4cb2-bfd9-c39eed09adcc.jpg",
+        "https://icms-image.slatic.net/images/ims-web/abaa358e-3c50-4772-a7ff-417ef23ab1e8.png"
+    ]
 
     const Loader = <div className="home-spinner-wrapper flex-center" style={{ height: "50vh" }}>
         <Spinner />
     </div>
+    const [activeIndex, setActiveIndex] = useState(0)
+    const moveSlide = (action) => {
+        if (action === "next") {
+            activeIndex < (slides.length - 1) ? setActiveIndex((prev) => prev + 1) : setActiveIndex(0)
 
+        } else {
+            activeIndex === 0 ? setActiveIndex(slides.length - 1) : setActiveIndex((prev) => prev - 1)
+        }
+
+    }
     return (
         <>
             <Header />
 
             <main>
+
+                <section>
+
+                    <div className="slider-container">
+                        <button className="slider-btn slider-btn--left"
+                            onClick={() => moveSlide("prev")}
+                        ><ChevronLeft /></button>
+                        <button className="slider-btn slider-btn--right"
+                            onClick={() => moveSlide("next")}
+                        ><ChevronRight /></button>
+
+
+                        <div className="slider-body">
+                            <div className="slider-slides-container" style={{
+                                transform: `translateX(-${100 * activeIndex}%)`
+                            }}>
+                                {slides.map((slide, i) => (
+                                    <div className="slider-slide" key={i}>
+                                        <img src={slide} alt="" />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="slider-nav">
+                            <ul className="slider-nav-elements">
+                                {slides.map((slide, i) => (
+                                    <li className={i === activeIndex ? "slider-nav-el dot active" : "slider-nav-el dot"} key={slide}
+                                        onClick={() => setActiveIndex(i)}
+                                    ></li>
+                                ))}
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </section>
 
                 {/* {loading ? Loader :
                     <div className="products-grid">
@@ -83,7 +136,7 @@ const Home = () => {
                         </div>
                     </section>
                 }
-                
+
                 {loading ? Loader :
                     <section className="home-section">
                         <div className="home-section-heading">Top Selling</div>
