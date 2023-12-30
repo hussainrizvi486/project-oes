@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from "../../components";
-import axios from 'axios';
+// import axios from 'axios';
 import { Header, Spinner } from "../../components";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -53,7 +53,6 @@ const Home = () => {
     //     } catch (error) {
     //         alert(error)
     //     }
-
     // }
     useEffect(() => {
         setLoading(false)
@@ -120,7 +119,6 @@ const Home = () => {
                         </div>
 
                     </div>
-
                 </section>
 
                 {/* {loading ? Loader :
