@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from "../../components";
-// import axios from 'axios';
+import axios from 'axios';
 import { Header, Spinner } from "../../components";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { API_URL } from "../../redux/store";
 
 const data = [
     {
@@ -43,21 +44,25 @@ const data = [
 ]
 
 const Home = () => {
+    
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
-    // const getData = async () => {
-    //     try {
-    //         const response = await axios.get("https://fakestoreapi.com/products/")
-    //         setProducts(data)
-    //         console.log(response.data)
-    //     } catch (error) {
-    //         alert(error)
-    //     }
-    // }
+
+    const getData = async () => {
+
+        try {
+            const response = await axios.get(`${API_URL}/api/get-products`)
+            if (response.status == 200) {
+                setProducts(response.data)
+                setLoading(false)
+            }
+
+        } catch (error) {
+            alert(error)
+        }
+    }
     useEffect(() => {
-        setLoading(false)
-        setProducts(data)
-        // getData()
+        getData()
     }, [])
 
     const slides = [
@@ -127,15 +132,19 @@ const Home = () => {
                     </div>
                 } */}
                 {loading ? Loader :
+                            // "product_name","price", "cover_image", "category"
                     <section className="home-section">
                         <div className="home-section-heading">Trending products</div>
                         <div className="home-section-products products-grid">
-                            {products.map((val, u) => <ProductCard key={u} price={val.price} name={val.title} image={val.image} />)}
+                            {products.map((val, u) => <ProductCard
+                            
+                            id={val.id}
+                            key={u} price={val.price} name={val.product_name} image={String("https://"+val.cover_image)} />)}
                         </div>
                     </section>
                 }
 
-                {loading ? Loader :
+                {/* {loading ? Loader :
                     <section className="home-section">
                         <div className="home-section-heading">Top Selling</div>
                         <div className="home-section-products products-grid">
@@ -151,7 +160,7 @@ const Home = () => {
                             {products.map((val, u) => <ProductCard key={u} price={val.price} name={val.title} image={val.image} />)}
                         </div>
                     </section>
-                }
+                } */}
 
             </main>
         </>

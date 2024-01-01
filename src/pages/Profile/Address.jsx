@@ -1,12 +1,18 @@
 import { ArrowLeft, Plus } from "lucide-react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { UserSidebar } from "../../layouts"
 
 const Address = () => {
     const [Address, setAddress] = useState(false)
     return (
+
+
         <div>
-            <header className="header-simple">
+            <div>
+                <UserSidebar />
+            </div>
+            {/* <header className="header-simple">
                 <section>
                     <Link to={"/"}>
                         <ArrowLeft />
@@ -16,9 +22,10 @@ const Address = () => {
                     <div className="plain-header__heading">Address Book</div>
                 </section>
                 <section></section>
-            </header>
-            {
-                Address ? <>
+            </header> */}
+
+            <div>
+                {Address ? <>
                     <div className="address-cards-container">
                         <AddressCard />
                         <AddressCard />
@@ -35,8 +42,9 @@ const Address = () => {
                                 <Plus /> <span>Add New Address</span>
                             </button>
                         </div>
-                    </div>
-            }
+                    </div>}
+            </div>
+
         </div>
     )
 }

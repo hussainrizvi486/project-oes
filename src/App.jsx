@@ -17,14 +17,17 @@ const Product = lazy(() => import("./pages/Product/Product"))
 const Login = lazy(() => import("./pages/Login/Login"))
 const Cart = lazy(() => import("./pages/Cart/Cart"))
 const Address = lazy(() => import("./pages/Profile/Address"))
+const Profile = lazy(() => import("./pages/Profile/Profile"))
 const Register = lazy(() => import("./pages/Register/Register"))
-
+import { getUser } from "./redux/slices/authSlice"
 import { useSelector } from "react-redux"
 import { Footer } from "./layouts"
 
 
 function App() {
   const user = useSelector((state) => state.auth.user)
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
+  console.log(isAuthenticated)
   console.log(user)
   return (
     <Suspense fallback={<Spinner />}>
@@ -33,17 +36,22 @@ function App() {
           <Routes>
             {/* <Header /> */}
             <Route path="/" element={<Home />} />
-            <Route path="/product" element={<Product />} />
+            <Route path="/product/:id" element={<Product />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/address" element={<Address />} />
+            {/* <Route path="/address" element={<Address />} /> */}
+
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/address" element={<Address />} />
+            {/* <Route path="orders" element={<Profile />} /> */}
+            {/* </Route> */}
+
             <Route path="*" element={<p>Path not resolved</p>} />
 
           </Routes>
+          <Footer />
 
-            <Footer />
-          
         </div>
       </main>
     </Suspense>

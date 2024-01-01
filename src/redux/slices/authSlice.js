@@ -1,11 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit'
+/* eslint-disable no-unused-vars */
+import { createSlice } from '@reduxjs/toolkit';
 
-const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null
+const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
 
 const initialState = {
     user: user,
     accessToken: null,
-    isAuthenticated : false
+    isAuthenticated: false
 }
 
 const authSlice = createSlice({
@@ -16,11 +17,12 @@ const authSlice = createSlice({
             const { user, accessToken } = action.payload
             state.user = user
             state.accessToken = accessToken
+            state.isAuthenticated = true
         },
         LogOut: (state, action) => {
+            state.isAuthenticated = false
             state.user = null
             state.accessToken = null
-
         }
     }
 })
@@ -30,4 +32,3 @@ export const { LogIn, LogOut } = authSlice.actions
 export default authSlice.reducer
 export const getUser = (state) => state.auth.user
 export const getToken = (state) => state.auth.accessToken
-

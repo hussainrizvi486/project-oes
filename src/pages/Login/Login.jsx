@@ -1,20 +1,22 @@
 import { useRef, useState } from "react"
 import { Header } from "../../components"
 import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { LoginUser } from "../../redux/actions/Login"
 
 
 const Login = () => {
     const userNameRef = useRef()
     const passwordRef = useRef()
     const [FormMsg, setFormMsg] = useState("")
-    const user = useSelector((state) => state.auth.user)
-    console.log(user)
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
         e.preventDefault()
-        if (!passwordRef.current.value && !userNameRef.current.value) {
+        const password = passwordRef.current.value
+        const email = userNameRef.current.value
+        if (!password && !email) {
             setFormMsg("Please set email and password")
             userNameRef.current.classList.add("danger")
             passwordRef.current.classList.add("danger")
@@ -27,7 +29,7 @@ const Login = () => {
             setFormMsg("")
         }
 
-        if (!userNameRef.current.value) {
+        if (!email) {
             setFormMsg("Please set username or email")
             userNameRef.current.classList.add("danger")
             throw new Error("Value Error")
@@ -38,7 +40,7 @@ const Login = () => {
             setFormMsg("")
         }
 
-        if (!passwordRef.current.value) {
+        if (!password) {
             passwordRef.current.classList.add("danger")
             setFormMsg("Please set the password")
             throw new Error("Value Error")
@@ -49,9 +51,15 @@ const Login = () => {
             setFormMsg("")
         }
 
+        const credentials = {
+            "email": email,
+            "password": password
+        }
+        LoginUser(credentials, dispatch)
+        console.log()
         // LoginUser({
-        //     "password": passwordRef.current.value,
-        //     "username": userNameRef.current.value
+        //     "password": password,
+        //     "username": email
         // })
         // console.log(user)
 

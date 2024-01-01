@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
-import { ArrowLeft, ArrowRight } from "lucide-react"
-import { useState } from "react"
+import { ArrowLeft, ArrowRight, Turtle } from "lucide-react"
+import { useEffect, useState } from "react"
 import { Header } from "../../components"
+import axios from "axios"
+import { API_URL } from "../../redux/store"
+import { useParams } from "react-router-dom"
 // https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/d6af57ef-afbe-4da3-99fc-85026dfa2544/md08003300-DZ-13-jpg
 // https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/77c7117d-b652-4c8b-a266-5e36db20a229/md08003300-DZ-06-jpg
 // https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/82f45bc8-b8ef-47e1-b700-f6acead88e77/md08003300-DZ-05-jpg
@@ -33,11 +36,35 @@ const images = [
 
 const Product = () => {
     console.log(images)
+    const [productData, setProductData] = useState(null)
+    let _404 = false
+    const { id } = useParams();
+
+    const getProductDetail = async () => {
+        try {
+            const req = await axios.get(`${API_URL}api/product/details/${id}`)
+            if (req.status == 200) {
+                setProductData(req.data[0])
+                console.log(req.data[0])
+            }
+
+        } catch (error) {
+            _404 = true
+
+        }
+    }
+
+    useEffect(() => {
+        getProductDetail()
+
+    }, [])
+
     const product = {
         "name": "Samsung Neo QLED 4K Smart TV",
         "category": "Movies & TV",
         "price": "$5,790.00",
     }
+
     return (
         <>
             <Header />
@@ -51,13 +78,13 @@ const Product = () => {
                         <div>
 
                             <div className="product-name">
-                                {product.name}
+                                {productData?.product_name}
                             </div>
                             <div className="product-category">
-                                {product.category}
+                                {productData?.category || "Test Category"}
                             </div>
                             <div className="product-price" >
-                                {product.price}
+                                {productData?.price}
                             </div>
                         </div>
 
@@ -71,7 +98,9 @@ const Product = () => {
                 <div className="product-page__description-section">
                     <div style={{ fontSize: "1.25rem", fontWeight: "600" }}>Description</div>
                     <br />
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus assumenda quam nobis. Enim sapiente eos corrupti ullam! Voluptas delectus, maiores magni assumenda, eum error nemo ipsa fuga debitis culpa ullam iusto aliquid odit mollitia maxime rem sequi cupiditate. Tenetur, quaerat?</div>
+
+                    <div dangerouslySetInnerHTML={{ __html: productData?.description || "" }}>
+                    </div>
                 </div>
 
             </main>
