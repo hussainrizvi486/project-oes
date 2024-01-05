@@ -44,7 +44,7 @@ const data = [
 ]
 
 const Home = () => {
-    
+
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -52,6 +52,7 @@ const Home = () => {
 
         try {
             const response = await axios.get(`${API_URL}/api/get-products`)
+            console.log(response)
             if (response.status == 200) {
                 setProducts(response.data)
                 setLoading(false)
@@ -132,14 +133,14 @@ const Home = () => {
                     </div>
                 } */}
                 {loading ? Loader :
-                            // "product_name","price", "cover_image", "category"
+                    // "product_name","price", "cover_image", "category"
                     <section className="home-section">
                         <div className="home-section-heading">Trending products</div>
                         <div className="home-section-products products-grid">
                             {products.map((val, u) => <ProductCard
-                            
-                            id={val.id}
-                            key={u} price={val.price} name={val.product_name} image={String("https://"+val.cover_image)} />)}
+
+                                id={val.id}
+                                key={u} price={val.price} name={val.product_name} image={val.cover_image} />)}
                         </div>
                     </section>
                 }

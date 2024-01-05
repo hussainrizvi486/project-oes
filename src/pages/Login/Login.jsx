@@ -2,6 +2,7 @@ import { useRef, useState } from "react"
 import { Header } from "../../components"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import { LoginUser } from "../../redux/actions/Login"
 
 
@@ -9,7 +10,7 @@ const Login = () => {
     const userNameRef = useRef()
     const passwordRef = useRef()
     const [FormMsg, setFormMsg] = useState("")
-
+    const navigate = useNavigate()
     const dispatch = useDispatch();
 
     const submitForm = async (e) => {
@@ -55,7 +56,8 @@ const Login = () => {
             "email": email,
             "password": password
         }
-        LoginUser(credentials, dispatch)
+        LoginUser(credentials, dispatch, navigate)
+
         console.log()
         // LoginUser({
         //     "password": password,
@@ -83,14 +85,14 @@ const Login = () => {
                             <div className="input-box__label"></div>
 
                             <div className="input-box__input">
-                                <input type="text" placeholder="Username or Email" ref={userNameRef} className="auth-input" />
+                                <input type="email" placeholder="Username or Email" ref={userNameRef} className="auth-input" />
                             </div>
                         </div>
                         <div className="input-box">
                             <div className="input-box__label"></div>
 
                             <div className="input-box__input">
-                                <input type="text" placeholder="Password" ref={passwordRef} className="auth-input" />
+                                <input type="password" placeholder="Password" ref={passwordRef} className="auth-input" />
                             </div>
                         </div>
                     </div>
